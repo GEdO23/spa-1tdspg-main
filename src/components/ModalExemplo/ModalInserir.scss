@@ -1,0 +1,84 @@
+@import url('https://fonts.cdnfonts.com/css/minecraft-4');
+
+.container{
+
+    $backColor: rgba(0,0,0,0.7);
+    $textColor: #fff;
+    $familiaDaFonte: Arial,Helvetica,sans-serif;
+    $tamanhoDaFonte: 1.5 rem;
+    $arredondamentoDaBorda: 5px;
+    $bordaPadrao: solid 2px #ccc;
+    $visibilidade: block;
+
+    background-color: $backColor;
+    color: $textColor;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 1.5rem;
+
+
+    h1 {
+        font-family: 'Minecraft', sans-serif;
+        text-align: center;
+    }
+
+    @mixin formInput($largura, $altura, $margem) {
+        
+        input{
+            display: $visibilidade;
+            width: $largura;
+            height: $altura;
+            margin: $margem;
+            border-radius: $arredondamentoDaBorda;
+            border: $bordaPadrao;
+            padding: 0 10px;
+        }
+
+    }
+
+    form {
+        width: 85%;
+        margin: 0 auto;
+
+        div {
+            margin: 2% 0;
+            @include formInput(70%, 40px, 0 auto 1% auto);
+            label {
+                display: $visibilidade;
+                width: 70%;
+                margin: 0 auto 0 auto;
+            }
+
+            button {
+                border: #000;
+                border-radius: $arredondamentoDaBorda;
+                background-color: #591bcc;
+                width: 40%;
+                height: 60px;
+                margin: 0 auto;
+                display: $visibilidade;
+                color: $textColor;
+                font-size: $tamanhoDaFonte;
+                font-weight: bold;
+                transition: background-color 250ms, color 300ms;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #5e34ac;
+                    color: #fff;
+                }
+
+                &:active {
+                    background-color: #1e0a42;
+                }
+
+            }
+
+        }
+
+    }
+
+}
